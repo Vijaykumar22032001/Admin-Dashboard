@@ -107,7 +107,6 @@ function App() {
             key={userRefreshKey}
             onAddUser={handleAddUser}
             onEditUser={handleEditUser}
-            onViewUser={handleViewUser}
           />
         )}
         {currentPage === 'orders' && (
@@ -115,7 +114,6 @@ function App() {
             key={orderRefreshKey}
             onAddOrder={handleAddOrder}
             onEditOrder={handleEditOrder}
-            onViewOrder={handleViewOrder}
           />
         )}
         {currentPage === 'settings' && (
