@@ -48,11 +48,6 @@ function App() {
     setShowEditUserModal(true);
   };
 
-  const handleViewUser = (user: User) => {
-    setSelectedUser(user);
-    setShowViewUserModal(true);
-  };
-
   const handleEditUserFromView = () => {
     setShowViewUserModal(false);
     setShowEditUserModal(true);
@@ -65,11 +60,6 @@ function App() {
   const handleEditOrder = (order: Order) => {
     setSelectedOrder(order);
     setShowEditOrderModal(true);
-  };
-
-  const handleViewOrder = (order: Order) => {
-    setSelectedOrder(order);
-    setShowViewOrderModal(true);
   };
 
   const handleEditOrderFromView = () => {
