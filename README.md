@@ -76,6 +76,22 @@ cd admin-panel
 ```bash
 npm install
 ```
+http://localhost:5173
+```
+
+## Login Credentials
+
+Use the following credentials to access the dashboard:
+
+- **Email:** admin@example.com
+- **Password:** Secret@123
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint for code quality
 
 3. Set up environment variables (optional):
 ```bash
