@@ -5,13 +5,11 @@ import type { Order } from "../types";
 interface OrderManagerProps {
   onAddOrder: () => void;
   onEditOrder: (order: Order) => void;
-  onViewOrder: (order: Order) => void;
 }
 
 function OrderManager({
   onAddOrder,
   onEditOrder,
-  onViewOrder,
 }: OrderManagerProps) {
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
@@ -47,19 +45,6 @@ function OrderManager({
   useEffect(() => {
     fetchOrders();
   }, [fetchOrders]);
-
-  const handleDelete = async (id: number) => {
-    if (!window.confirm("Are you sure you want to delete this order?")) {
-      return;
-    }
-
-    try {
-      await orderService.deleteOrder(id);
-      fetchOrders();
-    } catch (err) {
-      alert(err instanceof Error ? err.message : "Failed to delete order");
-    }
-  };
 
   const handleSearchChange = (value: string) => {
     setSearch(value);

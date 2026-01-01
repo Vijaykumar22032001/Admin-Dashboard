@@ -5,10 +5,9 @@ import type { User } from "../types";
 interface UserManagerProps {
   onAddUser: () => void;
   onEditUser: (user: User) => void;
-  onViewUser: (user: User) => void;
 }
 
-function UserManager({ onAddUser, onEditUser, onViewUser }: UserManagerProps) {
+function UserManager({ onAddUser, onEditUser }: UserManagerProps) {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -45,19 +44,6 @@ function UserManager({ onAddUser, onEditUser, onViewUser }: UserManagerProps) {
   useEffect(() => {
     fetchUsers();
   }, [fetchUsers]);
-
-  const handleDelete = async (id: number) => {
-    if (!window.confirm("Are you sure you want to delete this user?")) {
-      return;
-    }
-
-    try {
-      await userService.deleteUser(id);
-      fetchUsers();
-    } catch (err) {
-      alert(err instanceof Error ? err.message : "Failed to delete user");
-    }
-  };
 
   const handleSearchChange = (value: string) => {
     setSearch(value);
